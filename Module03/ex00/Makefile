@@ -1,8 +1,8 @@
 NAME = claptrap
-CC = c++
+CXX = c++
 RM = rm -f
 INCLUDES = -I./includes
-FLAGS = -std=c++98 -Wall -Wextra -Werror
+CXXFLAGS = -std=c++98 -Wall -Wextra -Werror
 OBJ_DIR = obj/
 
 SRC_1 = srcs/main.cpp \
@@ -12,14 +12,14 @@ OBJ_1 = $(patsubst %.cpp,$(OBJ_DIR)%.o,$(SRC_1))
 
 $(OBJ_DIR)%.o: %.cpp
 	@mkdir -p $(@D)
-	@$(CC) $(FLAGS) -c $< -o $@
+	@$(CXX) $(CXXFLAGS) -c $< -o $@
 
 .cpp.o:
-	@$(CC) $(FLAGS) $(INCLUDES) -c $< -o $@
+	@$(CXX) $(CXXFLAGS) $(INCLUDES) -c $< -o $@
 
 ${NAME}: ${OBJ_1}
 	@echo "Compiling $(NAME)..."
-	@${CC} ${FLAGS} ${OBJ_1} -o ${NAME}
+	@${CXX} ${CXXFLAGS} ${OBJ_1} -o ${NAME}
 	@echo "$(NAME) compiled successfully."
 
 all: ${NAME}

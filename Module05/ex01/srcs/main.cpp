@@ -22,11 +22,11 @@ int	main(void)
 	}
 	catch (const GradeTooHighException &e)
 	{
-		std::cerr << "\033[31mERROR: " << e.what() << "\033[00m" << std::endl;
+		std::cerr << COLOR_RED + "ERROR: " << e.what() << "\033[00m" << std::endl;
 	}
 	catch (const GradeTooLowException &e)
 	{
-		std::cerr << "\033[31mERROR: " << e.what() << "\033[00m" << std::endl;
+		std::cerr << COLOR_RED + "ERROR: " << e.what() << "\033[00m" << std::endl;
 	}
 	return (0);
 }

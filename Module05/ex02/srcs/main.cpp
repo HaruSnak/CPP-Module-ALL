@@ -4,7 +4,7 @@
 #include "../includes/ShrubberyCreationForm.hpp"
 
 void testSuccessfulShrubbery() {
-    std::cout << "\n\033[1;36m=== TEST ShrubberyCreationForm (SUCCESS) ===\033[0m" << std::endl;
+    std::cout << "\n\033[1;36m=== TEST ShrubberyCreationForm (SUCCESS) ===COLOR_RED + " << std::endl;
     try
 	{
         Bureaucrat gardener("Master Gardener", 130);
@@ -20,7 +20,7 @@ void testSuccessfulShrubbery() {
 }
 
 void testSuccessfulRobotomy() {
-    std::cout << "\n\033[1;36m=== TEST RobotomyRequestForm (SUCCESS) ===\033[0m" << std::endl;
+    std::cout << "\n\033[1;36m=== TEST RobotomyRequestForm (SUCCESS) ===COLOR_RED + " << std::endl;
     try
 	{
         Bureaucrat surgeon("Dr. Robot", 30);
@@ -36,7 +36,7 @@ void testSuccessfulRobotomy() {
 }
 
 void testSuccessfulPardon() {
-    std::cout << "\n\033[1;36m=== TEST PresidentialPardonForm (SUCCESS) ===\033[0m" << std::endl;
+    std::cout << "\n\033[1;36m=== TEST PresidentialPardonForm (SUCCESS) ===COLOR_RED + " << std::endl;
     try
 	{
         Bureaucrat president("Zaphod Beeblebrox", 1);
@@ -52,7 +52,7 @@ void testSuccessfulPardon() {
 }
 
 void testEdgeCases() {
-    std::cout << "\n\033[1;36m=== EDGE CASE TESTS ===\033[0m" << std::endl;
+    std::cout << "\n\033[1;36m=== EDGE CASE TESTS ===COLOR_RED + " << std::endl;
     
     // Test: Exact minimum grade for execution
     try
@@ -70,7 +70,7 @@ void testEdgeCases() {
 }
 
 void testFailureCases() {
-    std::cout << "\n\033[1;36m=== FAILURE TESTS (EXPECTED ERRORS) ===\033[0m" << std::endl;
+    std::cout << "\n\033[1;36m=== FAILURE TESTS (EXPECTED ERRORS) ===COLOR_RED + " << std::endl;
     
     // Test: Unsigned form execution
     try
@@ -112,10 +112,10 @@ int main(void)
         testFailureCases();
     } catch (...)
 	{
-        std::cerr << "\033[1;31mUNHANDLED EXCEPTION IN MAIN\033[0m" << std::endl;
+        std::cerr << "\033[1;31mUNHANDLED EXCEPTION IN MAINCOLOR_RED + " << std::endl;
         return (EXIT_FAILURE);
     }
 
-    std::cout << "\n\033[1;32m=== ALL TESTS COMPLETED ===\033[0m" << std::endl;
+    std::cout << "\n\033[1;32m=== ALL TESTS COMPLETED ===COLOR_RED + " << std::endl;
     return (EXIT_SUCCESS);
 }

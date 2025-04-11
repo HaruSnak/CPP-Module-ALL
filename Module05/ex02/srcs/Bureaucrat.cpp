@@ -4,7 +4,7 @@
 
 Bureaucrat::Bureaucrat(const std::string name, int grade) : m_name(name), m_grade(grade)
 {
-	std::cout << "\033[1;35mDefault constructor called ~ Bureaucrat " << this->m_name + "\033[0m" << std::endl;
+	std::cout << "\033[1;35mDefault constructor called ~ Bureaucrat " << this->m_name + "COLOR_RED + " << std::endl;
 	if (this->m_name.empty())
 	{
 		std::cerr << "Error: Invalid constructor, please enter a correct name!" << std::endl;
@@ -19,7 +19,7 @@ Bureaucrat::Bureaucrat(const std::string name, int grade) : m_name(name), m_grad
 
 Bureaucrat::Bureaucrat(const Bureaucrat &copy): m_name(copy.m_name), m_grade(copy.m_grade)
 {
-	std::cout << "\033[1;35mName constructor called ~ Bureaucrat " << this->m_name + "\033[0m" << std::endl;
+	std::cout << "\033[1;35mName constructor called ~ Bureaucrat " << this->m_name + "COLOR_RED + " << std::endl;
 	return ;
 }
 
@@ -27,7 +27,7 @@ Bureaucrat::Bureaucrat(const Bureaucrat &copy): m_name(copy.m_name), m_grade(cop
 
 Bureaucrat::~Bureaucrat()
 {
-	std::cout << "\033[1;31mDestructor called ~ Bureaucrat " << this->m_name + "\033[0m" << std::endl;
+	std::cout << "\033[1;31mDestructor called ~ Bureaucrat " << this->m_name + "COLOR_RED + " << std::endl;
 	return ;
 }
 
@@ -44,7 +44,7 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& copy)
 
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &src)
 {
-	std::cout << "\033[31m" + src.getName() << "\033[35m, bureaucrat grade \033[31m" << src.getGrade() << ".\033[00m";
+	std::cout << COLOR_RED + "" + src.getName() << "\033[35m, bureaucrat grade \033[31m" << src.getGrade() << ".\033[00m";
 	return (os);
 }
 

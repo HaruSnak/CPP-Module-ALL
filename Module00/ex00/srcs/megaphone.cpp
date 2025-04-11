@@ -6,16 +6,15 @@
 /*   By: shmoreno <shmoreno@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 20:03:33 by shmoreno          #+#    #+#             */
-/*   Updated: 2025/04/08 22:55:22 by shmoreno         ###   ########.fr       */
+/*   Updated: 2025/04/10 19:25:39 by shmoreno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <cctype>
 
 int	main(int argc, char *argv[])
 {
-	if (argc == 1)
+	if (argc == 1 || argv[1][0] == '\0')
 	{
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
 		return (0);

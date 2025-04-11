@@ -6,7 +6,7 @@
 /*   By: shmoreno <shmoreno@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 16:12:49 by shmoreno          #+#    #+#             */
-/*   Updated: 2025/04/09 18:08:32 by shmoreno         ###   ########.fr       */
+/*   Updated: 2025/04/11 22:27:12 by shmoreno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,54 +14,58 @@
 #include "../includes/HumanA.hpp"
 #include "../includes/HumanB.hpp"
 
+const std::string COLOR_RED = "\033[31m";
+const std::string COLOR_GREEN = "\033[32m";
+const std::string COLOR_NONE = "\033[0m";
+
 void testHumanA() {
-    std::cout << "\n\033[31m--- Testing HumanA ---\033[0m\n";
+    std::cout << COLOR_RED + "\n--- Testing HumanA ---" + COLOR_NONE << std::endl;;
     
-    Weapon sword("\033[32msharp sword\033[0m");
-    HumanA arthur("\033[32mArthur\033[0m", sword);
+    Weapon sword("sharp sword");
+    HumanA arthur("Arthur", sword);
     
     arthur.attack();
     
-    sword.setType("\033[32menchanted sword\033[0m");
+    sword.setType("enchanted sword");
     arthur.attack();
-    Weapon axe("\033[32mdouble-headed axe\033[0m");
-    HumanA gimli("\033[32mGimli\033[0m", axe);
+    Weapon axe("double-headed axe");
+    HumanA gimli("Gimli", axe);
     gimli.attack();
 }
 
 void testHumanB() {
-    std::cout << "\n\033[31m--- Testing HumanB ---\033[0m\n";
+    std::cout << COLOR_RED + "\n--- Testing HumanB ---" + COLOR_NONE << std::endl;;
     
-    HumanB legolas("\033[32mLegolas\033[0m");
+    HumanB legolas("Legolas");
     legolas.attack();
 
-    Weapon bow("\033[32mlongbow\033[0m");
+    Weapon bow("longbow");
     legolas.setWeapon(bow);
     legolas.attack();
-    bow.setType("\033[32melven longbow\033[0m");
+    bow.setType("elven longbow");
     legolas.attack();
     
-    Weapon knives("\033[32mtwin knives\033[0m");
+    Weapon knives("twin knives");
     legolas.setWeapon(knives);
     legolas.attack();
 }
 
 void edgeCases() {
-    std::cout << "\n\033[31m--- Edge Cases ---\033[0m\n";
+    std::cout << COLOR_RED + "\n--- Edge Cases ---" + COLOR_NONE << std::endl;;
     
     Weapon unnamed("");
-    HumanA nobody("\033[32mNobody\033[0m", unnamed);
+    HumanA nobody("Nobody", unnamed);
     nobody.attack();
     
-    HumanB ghost("\033[32mGhost\033[0m");
+    HumanB ghost("Ghost");
     ghost.attack();
 }
 
 int main() {
-    std::cout << "\033[31m===== WEAPON TEST SUITE =====\033[0m\n";
+    std::cout << COLOR_RED + "===== WEAPON TEST SUITE =====" + COLOR_NONE << std::endl;;
     testHumanA();
     testHumanB();
     edgeCases();
-    std::cout << "\n\033[31m===== TESTS COMPLETE =====\033[0m\n";
+    std::cout << COLOR_RED + "\n===== TESTS COMPLETE =====" + COLOR_NONE << std::endl;;
     return 0;
 }

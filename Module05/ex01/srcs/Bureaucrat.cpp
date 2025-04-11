@@ -44,7 +44,7 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& copy)
 
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &src)
 {
-	std::cout << "\033[31m" + src.getName() << "\033[35m, bureaucrat grade \033[31m" << src.getGrade() << ".\033[00m";
+	std::cout << COLOR_RED + "" + src.getName() << "\033[35m, bureaucrat grade \033[31m" << src.getGrade() << ".\033[00m";
 	return (os);
 }
 

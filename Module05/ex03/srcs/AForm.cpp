@@ -4,7 +4,7 @@
 
 AForm::AForm(std::string name, int gradeToSign, int gradeToExec): m_name(name), m_isSigned(false), m_gradeToSign(gradeToSign), m_gradeToExec(gradeToExec)
 {
-	std::cout << "\033[1;35mDefault constructor called ~ Form " << this->m_name + "\033[0m" << std::endl;
+	std::cout << "\033[1;35mDefault constructor called ~ Form " << this->m_name + "COLOR_RED + " << std::endl;
 	if (this->m_name.empty())
 	{
 		std::cerr << "Error: Invalid constructor, please enter a correct name!" << std::endl;
@@ -19,7 +19,7 @@ AForm::AForm(std::string name, int gradeToSign, int gradeToExec): m_name(name), 
 
 AForm::AForm(const AForm &copy) : m_name(copy.m_name), m_isSigned(copy.m_isSigned), m_gradeToSign(copy.m_gradeToSign), m_gradeToExec(copy.m_gradeToExec)
 {
-	std::cout << "\033[1;35mName constructor called ~ Form " << this->m_name + "\033[0m" << std::endl;
+	std::cout << "\033[1;35mName constructor called ~ Form " << this->m_name + "COLOR_RED + " << std::endl;
 	return ;
 }
 
@@ -27,7 +27,7 @@ AForm::AForm(const AForm &copy) : m_name(copy.m_name), m_isSigned(copy.m_isSigne
 
 AForm::~AForm()
 {
-	std::cout << "\033[1;31mDestructor called ~ Form " << this->m_name + "\033[0m" << std::endl;
+	std::cout << "\033[1;31mDestructor called ~ Form " << this->m_name + "COLOR_RED + " << std::endl;
 	return ;
 }
 

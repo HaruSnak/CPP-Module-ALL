@@ -7,7 +7,8 @@
 #include <memory>
 #include <limits>
 
-class	Zombie {
+class	Zombie
+{
 	private:
 		std::string name;
 
@@ -16,7 +17,6 @@ class	Zombie {
 		Zombie(std::string name);
 		~Zombie(void);
 		void	announce(void);
-
 };
 
 Zombie* zombieHorde(int N, std::string name);

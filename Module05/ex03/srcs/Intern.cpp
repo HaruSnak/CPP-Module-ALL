@@ -4,14 +4,14 @@
 
 Intern::Intern()
 {
-	std::cout << "\033[1;35mDefault constructor called ~ Intern\033[0m" << std::endl;
+	std::cout << "\033[1;35mDefault constructor called ~ InternCOLOR_RED + " << std::endl;
 	return ;
 }
 
 Intern::Intern(const Intern &copy)
 {
 	(void)copy;
-	std::cout << "\033[1;35mName constructor called ~ Intern\033[0m" << std::endl;
+	std::cout << "\033[1;35mName constructor called ~ InternCOLOR_RED + " << std::endl;
 	return ;
 }
 
@@ -19,7 +19,7 @@ Intern::Intern(const Intern &copy)
 
 Intern::~Intern()
 {
-	std::cout << "\033[1;31mDestructor called ~ Intern\033[0m" << std::endl;
+	std::cout << "\033[1;31mDestructor called ~ InternCOLOR_RED + " << std::endl;
 	return ;
 }
 

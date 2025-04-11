@@ -6,7 +6,7 @@
 /*   By: shmoreno <shmoreno@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 13:55:29 by shmoreno          #+#    #+#             */
-/*   Updated: 2025/04/08 23:53:11 by shmoreno         ###   ########.fr       */
+/*   Updated: 2025/04/10 22:46:14 by shmoreno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,29 @@ void	PhoneBook::searchContacts(char c, int b_index)
 			return ;
 		}
 		m_contacts[b_index - 1].displayOneContact();
+	}
+}
+
+void	PhoneBook::boucleAddImplement(std::string input[])
+{
+	while (1)
+	{
+		(std::cout << COLOR_GREEN + "First Name: " + COLOR_NONE, baseGetLine(input, 1));
+		if (ft_verifyalpha(input, 1, ERROR_ALPHA) == -1)
+			continue ;
+		(std::cout << COLOR_GREEN + "Last Name: " + COLOR_NONE, baseGetLine(input, 2));
+		if (ft_verifyalpha(input, 2, ERROR_ALPHA) == -1)
+			continue ;
+		(std::cout << COLOR_GREEN + "Nickname: " + COLOR_NONE, baseGetLine(input, 3));
+		if (ft_verifyalpha(input, 3, ERROR_ALNUM) == -1)
+			continue ;
+		(std::cout << COLOR_GREEN + "Phone Number: " + COLOR_NONE, baseGetLine(input, 4));
+		if (ft_verifyalpha(input, 4, ERROR_DIGIT) == -1)
+			continue ;
+		(std::cout << COLOR_GREEN + "Secret: " + COLOR_NONE, baseGetLine(input, 5));
+		if (ft_verifyalpha(input, 5, ERROR_ALNUM) == -1)
+			continue ;
+		this->addContacts(input[1], input[2], input[3], input[4], input[5]);
+		break ;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: shmoreno <shmoreno@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 16:12:49 by shmoreno          #+#    #+#             */
-/*   Updated: 2025/04/09 11:03:14 by shmoreno         ###   ########.fr       */
+/*   Updated: 2025/04/11 22:13:13 by shmoreno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,38 +15,42 @@
 #include <sstream>
 #include <cstdlib>
 
+const std::string COLOR_RED = "\033[31m";
+const std::string COLOR_GREEN = "\033[32m";
+const std::string COLOR_NONE = "\033[0m";
+
 void testStackAllocation(void)
 {
-    std::cout << "\n\033[31m=== Test Stack Allocation ===\033[0m\n";
-    std::cout << "\033[32mCreating stack zombie...\033[0m\n";
+    std::cout << COLOR_RED + "=== Test Stack Allocation ===" + COLOR_NONE << std::endl;
+    std::cout << COLOR_GREEN + "Creating stack zombie..." + COLOR_NONE << std::endl;
     Zombie stackZombie("Stacky");
     stackZombie.announce();
-    std::cout << "\033[32mLeaving scope - stack zombie should be destroyed automatically\033[0m\n";
+    std::cout << COLOR_GREEN + "Leaving scope - stack zombie should be destroyed automatically" + COLOR_NONE << std::endl;
 }
 
 void testHeapAllocation(void)
 {
-    std::cout << "\n\033[31m=== Test Heap Allocation ===\033[0m\n";
+    std::cout << COLOR_RED + "=== Test Heap Allocation ===" + COLOR_NONE << std::endl;
     
-    std::cout << "\033[32mCreating heap zombie...\n";
+    std::cout << COLOR_GREEN + "Creating heap zombie...\n";
     Zombie* heapZombie = newZombie("Heapy");
     heapZombie->announce();
-    std::cout << "\033[32mExplicitly deleting heap zombie...\033[0m\n";
+    std::cout << COLOR_GREEN + "Explicitly deleting heap zombie..." + COLOR_NONE << std::endl;
     delete heapZombie;
-    std::cout << "\033[32mLeaving scope - no automatic destruction for heap zombie\033[0m\n";
+    std::cout << COLOR_GREEN + "Leaving scope - no automatic destruction for heap zombie" + COLOR_NONE << std::endl;
 }
 
 void testRandomChump(void)
 {
-    std::cout << "\n\033[31m=== Test Random Chump ===\033[0m\n";
-    std::cout << "\033[32mCalling randomChump...\033[0m\n";
+    std::cout << COLOR_RED + "=== Test Random Chump ===" + COLOR_NONE << std::endl;
+    std::cout << COLOR_GREEN + "Calling randomChump..." + COLOR_NONE << std::endl;
     randomChump("Chumpy");
-    std::cout << "\033[32mrandomChump scope ended - zombie should be destroyed\033[0m\n";
+    std::cout << COLOR_GREEN + "randomChump scope ended - zombie should be destroyed" + COLOR_NONE << std::endl;
 }
 
 void testZombieArmy(void)
 {
-    std::cout << "\n\033[31m=== Test Zombie Army ===\033[0m\n";
+    std::cout << COLOR_RED + "=== Test Zombie Army ===" + COLOR_NONE << std::endl;
     const int ARMY_SIZE = 3;
     Zombie* army[ARMY_SIZE];
     
@@ -55,18 +59,18 @@ void testZombieArmy(void)
 	army[2] = newZombie("ZombieSoldier_2");
     for (int i = 0; i < ARMY_SIZE; i++)
         army[i]->announce();
-    std::cout << "\033[32mDestroying zombie army...\033[0m\n";
+    std::cout << COLOR_GREEN + "Destroying zombie army..." + COLOR_NONE << std::endl;
     for (int i = 0; i < ARMY_SIZE; i++)
         delete army[i];
 }
 
 int main(void)
 {
-    std::cout << "\033[31m===== ZOMBIE TESTS =====\033[0m\n";
+    std::cout << COLOR_RED + "===== ZOMBIE TESTS =====" + COLOR_NONE << std::endl;
     testStackAllocation();
     testHeapAllocation();
     testRandomChump();
     testZombieArmy();
-    std::cout << "\n\033[31m===== END OF TESTS =====\033[0m\n";
+    std::cout << COLOR_RED + "===== END OF TESTS =====" + COLOR_NONE << std::endl;
     return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: shmoreno <shmoreno@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 16:12:49 by shmoreno          #+#    #+#             */
-/*   Updated: 2025/04/10 00:02:45 by shmoreno         ###   ########.fr       */
+/*   Updated: 2025/04/11 22:28:57 by shmoreno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,15 +30,15 @@ int main(int argc, char *argv[])
 	size_t		pos;
 
 	if (argc != 4 || argv[2][0] == '\0')
-		ft_error_base("Three parameters in the following order: a filename and two strings, s1 and s2 (No Empty).\033[0m");
+		ft_error_base("Three parameters in the following order: a filename and two strings, s1 and s2 (No Empty)." + COLOR_NONE);
 	std::ifstream file(argv[1]);
 	if (!file)
-		ft_error_base("Invalid file!\033[0m");
+		ft_error_base("Invalid file!" + COLOR_NONE);
 	outputName = argv[1];
 	outputName += ".replace";
 	std::ofstream outputFile(outputName.c_str());
 	if (!outputFile)
-		ft_error_base("Invalid file!\033[0m");
+		ft_error_base("Invalid file!" + COLOR_NONE);
 	while (std::getline(file, line))
 	{
 		if (std::strcmp(argv[2], argv[3]) != 0)

@@ -6,31 +6,31 @@
 /*   By: shmoreno <shmoreno@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 13:55:36 by shmoreno          #+#    #+#             */
-/*   Updated: 2025/04/08 23:57:37 by shmoreno         ###   ########.fr       */
+/*   Updated: 2025/04/10 22:45:38 by shmoreno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/awphonebook.hpp"
 
-int	ft_verifyalpha(std::string *input, int k, char c)
+int	ft_verifyalpha(std::string *input, int k, Error nbr)
 {
 	for (size_t i = 0; i < input[k].length(); i++)
 	{
-		if ((c == 'T' || c == 'A') && std::isspace(input[k][i]))
+		if ((nbr == ERROR_ALPHA || nbr == ERROR_ALNUM) && std::isspace(input[k][i]))
 				continue ;
-		if (c == 'T' && (std::isalpha(input[k][i]) == 0 || std::isspace(input[k][i]) != 0))
+		if (nbr == ERROR_ALPHA && (std::isalpha(input[k][i]) == 0 || std::isspace(input[k][i]) != 0))
 		{
-			std::cout << "\033[31mError: Please put only alphabetical letters!\033[0m" << std::endl;
+			std::cout << COLOR_RED + "Error: Please put only alphabetical letters!" + COLOR_NONE << std::endl;
 			return (-1);
 		}
-		else if (c == 'N' && std::isdigit(input[k][i]) == 0)
+		else if (nbr == ERROR_DIGIT && std::isdigit(input[k][i]) == 0)
 		{
-			std::cout << "\033[31mError: Please enter numbers only!\033[0m" << std::endl;
+			std::cout << COLOR_RED + "Error: Please enter numbers only!" + COLOR_NONE << std::endl;
 			return (-1);
 		}
-		else if (c == 'A' && (std::isalnum(input[k][i]) == 0 || std::isspace(input[k][i]) != 0))
+		else if (nbr == ERROR_ALNUM && (std::isalnum(input[k][i]) == 0 || std::isspace(input[k][i]) != 0))
 		{
-			std::cout << "\033[31mError: Please enter only numbers or alphabetical letters!\033[0m" << std::endl;
+			std::cout << COLOR_RED + "Error: Please enter only numbers or alphabetical letters!" + COLOR_NONE << std::endl;
 			return (-1);
 		}
 	}
@@ -41,7 +41,7 @@ void	ft_ifeofcin(void)
 {
 	if (std::cin.eof())
 	{
-		std::cout << "\n\033[31mError: End of input detected. Program closing.\033[0m" << std::endl;
+		std::cout << COLOR_RED + "Error: End of input detected. Program closing." + COLOR_NONE << std::endl;
 		exit(-1);
 	}
 }

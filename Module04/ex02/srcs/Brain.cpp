@@ -41,18 +41,18 @@ void	Brain::setIdeas(unsigned int i, std::string addIdeas)
 	if (i < 100)
 		this->ideas[i] = addIdeas;
 	else
-		std::cerr << "\033[31mError: Invalid number 0 > 100\033[0m" << std::endl;
+		std::cerr << COLOR_RED + "Error: Invalid number 0 > 100COLOR_RED + " << std::endl;
 	return ;
 }
 
 void	Brain::getIdeas(void) const
 {
-	std::cout << "\033[31m---------------------------------------\033[0m" << std::endl;
+	std::cout << "COLOR_RED + "---------------------------------------COLOR_RED + " << std::endl;
 	for (int i = 0; i < 100; i++)
 	{
 		if (!this->ideas[i].empty())
-			std::cout << "\033[31m" << i << ": \033[0m" << this->ideas[i] << std::endl;
+			std::cout << COLOR_RED + "" << i << ": COLOR_RED + " << this->ideas[i] << std::endl;
 	}
-	std::cout << "\033[31m---------------------------------------\033[0m" << std::endl;
+	std::cout << "COLOR_RED + "---------------------------------------COLOR_RED + " << std::endl;
 	return ;
 }

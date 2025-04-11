@@ -4,13 +4,13 @@
 
 PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm(target, 25, 5), m_target(target)
 {
-	std::cout << "\033[1;35mDefault constructor called ~ ShrubberyCreationForm " << this->m_target + "\033[0m" << std::endl;
+	std::cout << "\033[1;35mDefault constructor called ~ ShrubberyCreationForm " << this->m_target + "COLOR_RED + " << std::endl;
 	return ;
 }
 
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &copy) : AForm(copy) , m_target(copy.m_target)
 {
-	std::cout << "\033[1;35mName constructor called ~ ShrubberyCreationForm " << copy.m_target + "\033[0m" << std::endl;
+	std::cout << "\033[1;35mName constructor called ~ ShrubberyCreationForm " << copy.m_target + "COLOR_RED + " << std::endl;
 	return ;
 }
 
@@ -18,7 +18,7 @@ PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &cop
 
 PresidentialPardonForm::~PresidentialPardonForm()
 {
-	std::cout << "\033[1;31mDestructor called ~ ShrubberyCreationForm " << this->m_target + "\033[0m" << std::endl;
+	std::cout << "\033[1;31mDestructor called ~ ShrubberyCreationForm " << this->m_target + "COLOR_RED + " << std::endl;
 	return ;
 }
 
