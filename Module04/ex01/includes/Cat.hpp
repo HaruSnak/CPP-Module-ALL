@@ -1,5 +1,17 @@
-#ifndef Cat_HPP
-# define Cat_HPP
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: shmoreno <shmoreno@student.42lausanne.c    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/15 17:32:57 by shmoreno          #+#    #+#             */
+/*   Updated: 2025/04/15 17:32:58 by shmoreno         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef CAT_HPP
+# define CAT_HPP
 
 # include <iostream>
 # include <string>

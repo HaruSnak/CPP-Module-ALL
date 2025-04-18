@@ -1,19 +1,27 @@
-#include "../includes/Bureaucrat.hpp"
-#include "../includes/PresidentialPardonForm.hpp"
-#include "../includes/RobotomyRequestForm.hpp"
-#include "../includes/ShrubberyCreationForm.hpp"
-#include "../includes/Intern.hpp"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: shmoreno <shmoreno@student.42lausanne.c    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/17 14:21:53 by shmoreno          #+#    #+#             */
+/*   Updated: 2025/04/17 14:42:39 by shmoreno         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "../includes/coffee_making.hpp"
 
 void testWithTryCatch(const std::string& testName, void (*testFunc)())
 {
-    std::cout << "\n=== " << testName << " ===" << std::endl;
+    std::cout << color::COLOR_RED + "\n=== " << testName << " ===" + color::COLOR_NONE << std::endl;
     try
 	{
         testFunc();
     }
 	catch (const std::exception& e)
 	{
-        std::cerr << "❌ Exception: " << e.what() << std::endl;
+        std::cerr << color::COLOR_RED + "❌ Exception: " << e.what() << color::COLOR_NONE << std::endl;
     }
 }
 
@@ -62,7 +70,7 @@ void testInvalidForm(void)
         delete (form);
         throw std::runtime_error("Should not have created invalid form");
     }
-    std::cout << "✓ Correctly rejected invalid form" << std::endl;
+    color::green("✓ Correctly rejected invalid form");
 }
 
 void testEdgeCaseEmptyTarget(void)

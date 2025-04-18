@@ -12,7 +12,7 @@ WrongAnimal::WrongAnimal()
 WrongAnimal::WrongAnimal(const WrongAnimal &copy)
 {
     std::cout << "Copy constructor called ~ WrongAnimal" << std::endl;
-	*this = copy;
+	this->type = copy.type;
 	return ;
 }
 

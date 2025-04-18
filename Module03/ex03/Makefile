@@ -2,7 +2,7 @@ NAME = diamondtrap
 CXX = c++
 RM = rm -f
 INCLUDES = -I./includes
-CXXFLAGS = -std=c++98 -Wall -Wextra -Werror -Wshadow
+CXXFLAGS = -std=c++98 -Wall -Wextra -Werror -Wshadow -Wno-shadow
 OBJ_DIR = obj/
 
 SRC_1 = srcs/main.cpp \

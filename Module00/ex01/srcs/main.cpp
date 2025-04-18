@@ -6,7 +6,7 @@
 /*   By: shmoreno <shmoreno@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 13:55:23 by shmoreno          #+#    #+#             */
-/*   Updated: 2025/04/10 22:44:09 by shmoreno         ###   ########.fr       */
+/*   Updated: 2025/04/12 16:03:15 by shmoreno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ int	main(void)
 
 	while (1)
 	{
-		std::cout << COLOR_RED + "\nThe ADD command is used to add a contact, SEARCH to search for a contact and EXIT to exit the program." + COLOR_NONE << std::endl;
-		std::cout << COLOR_GREEN + "Enter a command: " + COLOR_NONE;
+		color::red("\nThe ADD command is used to add a contact, SEARCH to search for a contact and EXIT to exit the program.");
+		color::green("Enter a command: ");
 		std::cin >> input[0];
 		ft_ifeofcin();
 		std::cin.ignore(10000, '\n');
@@ -35,7 +35,8 @@ int	main(void)
 		else if (input[0].compare("SEARCH") == 0)
 		{
 			phonebook.searchContacts('A', 0);
-			(std::cout << COLOR_GREEN + "Select an index for more information: " + COLOR_NONE, std::cin >> input[0], ft_ifeofcin());
+			color::green("Select an index for more information: ");
+			(std::cin >> input[0], ft_ifeofcin());
 			if (ft_verifyalpha(input, 0, ERROR_DIGIT) == -1)
 					continue ;
 			phonebook.searchContacts('O', std::atoi(input[0].c_str()));
@@ -43,7 +44,7 @@ int	main(void)
 		else if (input[0].compare("EXIT") == 0)
 			break ;
 		else
-			std::cout << COLOR_RED + "Error: Command invalid, retry!" + COLOR_NONE << std::endl;
+			color::red("Error: Command invalid, retry!");
 	}
 	return (0);
 }

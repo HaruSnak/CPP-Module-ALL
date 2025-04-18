@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: shmoreno <shmoreno@student.42lausanne.c    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/15 17:37:27 by shmoreno          #+#    #+#             */
+/*   Updated: 2025/04/15 17:37:28 by shmoreno         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/WrongAnimal.hpp"
 
 /*------------------------------- CONSTRUCTOR --------------------------------*/
@@ -12,7 +24,7 @@ WrongAnimal::WrongAnimal()
 WrongAnimal::WrongAnimal(const WrongAnimal &copy)
 {
     std::cout << "Copy constructor called ~ WrongAnimal" << std::endl;
-	*this = copy;
+	this->type = copy.type;
 	return ;
 }
 

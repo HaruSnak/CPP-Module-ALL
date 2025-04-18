@@ -1,5 +1,17 @@
-#ifndef Dog_HPP
-# define Dog_HPP
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: shmoreno <shmoreno@student.42lausanne.c    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/15 17:32:59 by shmoreno          #+#    #+#             */
+/*   Updated: 2025/04/15 17:33:00 by shmoreno         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef DOG_HPP
+# define DOG_HPP
 
 # include <iostream>
 # include <string>

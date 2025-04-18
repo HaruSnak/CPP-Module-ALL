@@ -1,16 +1,28 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: shmoreno <shmoreno@student.42lausanne.c    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/17 12:13:34 by shmoreno          #+#    #+#             */
+/*   Updated: 2025/04/17 12:14:35 by shmoreno         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/PresidentialPardonForm.hpp"
 
 /*------------------------------- CONSTRUCTOR --------------------------------*/
 
 PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm(target, 25, 5), m_target(target)
 {
-	std::cout << "\033[1;35mDefault constructor called ~ ShrubberyCreationForm " << this->m_target + "COLOR_RED + " << std::endl;
+	std::cout << "Default constructor called ~ ShrubberyCreationForm " << this->m_target << std::endl;
 	return ;
 }
 
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &copy) : AForm(copy) , m_target(copy.m_target)
 {
-	std::cout << "\033[1;35mName constructor called ~ ShrubberyCreationForm " << copy.m_target + "COLOR_RED + " << std::endl;
+	std::cout << "Name constructor called ~ ShrubberyCreationForm " << copy.m_target << std::endl;
 	return ;
 }
 
@@ -18,7 +30,7 @@ PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &cop
 
 PresidentialPardonForm::~PresidentialPardonForm()
 {
-	std::cout << "\033[1;31mDestructor called ~ ShrubberyCreationForm " << this->m_target + "COLOR_RED + " << std::endl;
+	std::cout << "Destructor called ~ ShrubberyCreationForm " << this->m_target << std::endl;
 	return ;
 }
 

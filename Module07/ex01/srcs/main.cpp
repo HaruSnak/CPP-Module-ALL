@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: shmoreno <shmoreno@student.42lausanne.c    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/18 14:12:41 by shmoreno          #+#    #+#             */
+/*   Updated: 2025/04/18 14:12:57 by shmoreno         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/iter.hpp"
 
 template <typename T>
@@ -29,6 +41,5 @@ int main(void)
     std::cout << "\n=== Test with an array of strings ===" << std::endl;
     std::string tabStr[] = {"Hello", "World", "!"};
     iter(tabStr, 3, printElement);
-
     return (0);
 }

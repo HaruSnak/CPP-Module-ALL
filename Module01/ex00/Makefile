@@ -1,4 +1,4 @@
-NAME = braiiiiiiinnn
+NAME = brain
 CXX = c++
 RM = rm -f
 INCLUDES = -I./includes

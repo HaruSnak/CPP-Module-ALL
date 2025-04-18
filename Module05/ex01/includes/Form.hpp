@@ -1,11 +1,21 @@
-#ifndef Form_HPP
-# define Form_HPP
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Form.hpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: shmoreno <shmoreno@student.42lausanne.c    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/15 19:04:16 by shmoreno          #+#    #+#             */
+/*   Updated: 2025/04/17 10:43:06 by shmoreno         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef FORM_HPP
+# define FORM_HPP
 
 # include <iostream>
 # include <string>
 # include "Bureaucrat.hpp"
-# include "GradeTooHighException.hpp"
-# include "GradeTooLowException.hpp"
 
 class Bureaucrat;
 
@@ -16,8 +26,6 @@ class Form
 		bool m_isSigned;
 		const int m_gradeToSign;
 		const int m_gradeToExec;
-		GradeTooHighException GradeTooHighExceptionn;
-		GradeTooLowException GradeTooLowExceptionn;
 	public:
 		Form(std::string name, int gradeToSign, int gradeToExec);
 		Form(const Form &copy);

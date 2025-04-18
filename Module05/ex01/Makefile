@@ -1,4 +1,4 @@
-NAME = form
+NAME = form_up
 CXX = c++
 RM = rm -f
 INCLUDES = -I./includes

@@ -1,4 +1,4 @@
-NAME = harl_2.0
+NAME = harl_base
 CXX = c++
 RM = rm -f
 INCLUDES = -I./includes

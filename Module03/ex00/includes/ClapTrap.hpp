@@ -1,5 +1,17 @@
-#ifndef ClapTrap_HPP
-# define ClapTrap_HPP
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: shmoreno <shmoreno@student.42lausanne.c    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/12 17:57:36 by shmoreno          #+#    #+#             */
+/*   Updated: 2025/04/12 17:59:47 by shmoreno         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef CLAPTRAP_HPP
+# define CLAPTRAP_HPP
 
 # include <iostream>
 # include <string>
@@ -17,7 +29,7 @@ class ClapTrap
 		ClapTrap(std::string name);
 		ClapTrap(const ClapTrap &copy);
 		~ClapTrap();
-		ClapTrap& operator=(ClapTrap& copy);
+		ClapTrap& operator=(const ClapTrap& copy);
 		void attack(const std::string& target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);

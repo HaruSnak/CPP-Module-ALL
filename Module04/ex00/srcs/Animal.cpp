@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: shmoreno <shmoreno@student.42lausanne.c    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/15 17:09:35 by shmoreno          #+#    #+#             */
+/*   Updated: 2025/04/15 17:11:16 by shmoreno         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/Animal.hpp"
 
 /*------------------------------- CONSTRUCTOR --------------------------------*/
@@ -9,10 +21,10 @@ Animal::Animal()
 	return ;
 }
 
-Animal::Animal( const Animal &copy)
+Animal::Animal(const Animal &copy)
 {
     std::cout << "Copy constructor called ~ Animal" << std::endl;
-	*this = copy;
+	this->type = copy.type;
 	return ;
 }
 

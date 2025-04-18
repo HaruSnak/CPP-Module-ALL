@@ -1,4 +1,4 @@
-NAME = intern
+NAME = coffee_making
 CXX = c++
 RM = rm -f
 INCLUDES = -I./includes

@@ -1,4 +1,4 @@
-NAME = abstract_class
+NAME = exception
 CXX = c++
 RM = rm -f
 INCLUDES = -I./includes

@@ -4,24 +4,23 @@
 
 Fixed::Fixed() : value(0)
 {
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << "Fixed constructor called" << std::endl;
 }
 
-Fixed::Fixed(const Fixed &a)
+Fixed::Fixed(const Fixed &src) : value(src.value)
 {
-	std::cout << "Copy constructor called" << std::endl;
-	*this = a;
+	std::cout << "Fixed constructor copy" << std::endl;
 }
 
 Fixed::Fixed(const int number_int)
 {
-	std::cout << "Int constructor called" << std::endl;
+	std::cout << "Fixed ~ Int constructor called" << std::endl;
 	this->value = number_int << bits;
 }
 
 Fixed::Fixed(const float number_float)
 {
-	std::cout << "Float constructor called" << std::endl;
+	std::cout << "Fixed ~ Float constructor called" << std::endl;
 	this->value = roundf(number_float * (1 << bits));
 }
 
@@ -29,7 +28,7 @@ Fixed::Fixed(const float number_float)
 
 Fixed::~Fixed()
 {
-	std::cout << "Destructor called" << std::endl;
+	std::cout << "Fixed destructor called" << std::endl;
 }
 
 /*------------------------------- OVERLOAD OPERATOR --------------------------------*/

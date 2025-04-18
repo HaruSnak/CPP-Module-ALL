@@ -1,15 +1,24 @@
-#ifndef Form_HPP
-# define Form_HPP
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   AForm.hpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: shmoreno <shmoreno@student.42lausanne.c    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/17 11:12:32 by shmoreno          #+#    #+#             */
+/*   Updated: 2025/04/17 11:12:31 by shmoreno         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef FORM_HPP
+# define FORM_HPP
 
 # include <iostream>
 # include <string>
 # include <fstream>
 # include "Bureaucrat.hpp"
-# include "GradeTooHighException.hpp"
-# include "GradeTooLowException.hpp"
 
 class Bureaucrat;
-class GradeTooLowException;
 
 class AForm
 {

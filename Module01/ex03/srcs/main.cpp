@@ -6,22 +6,17 @@
 /*   By: shmoreno <shmoreno@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 16:12:49 by shmoreno          #+#    #+#             */
-/*   Updated: 2025/04/11 22:27:12 by shmoreno         ###   ########.fr       */
+/*   Updated: 2025/04/12 16:39:32 by shmoreno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/Weapon.hpp"
-#include "../includes/HumanA.hpp"
-#include "../includes/HumanB.hpp"
+#include "../includes/needless_force.hpp"
 
-const std::string COLOR_RED = "\033[31m";
-const std::string COLOR_GREEN = "\033[32m";
-const std::string COLOR_NONE = "\033[0m";
-
-void testHumanA() {
-    std::cout << COLOR_RED + "\n--- Testing HumanA ---" + COLOR_NONE << std::endl;;
+void testHumanA(void)
+{
+    color::red("\n--- Testing HumanA ---");
     
-    Weapon sword("sharp sword");
+    Weapon sword("sharp sword" );
     HumanA arthur("Arthur", sword);
     
     arthur.attack();
@@ -33,8 +28,9 @@ void testHumanA() {
     gimli.attack();
 }
 
-void testHumanB() {
-    std::cout << COLOR_RED + "\n--- Testing HumanB ---" + COLOR_NONE << std::endl;;
+void testHumanB(void)
+{
+    color::red("\n--- Testing HumanB ---");
     
     HumanB legolas("Legolas");
     legolas.attack();
@@ -50,8 +46,9 @@ void testHumanB() {
     legolas.attack();
 }
 
-void edgeCases() {
-    std::cout << COLOR_RED + "\n--- Edge Cases ---" + COLOR_NONE << std::endl;;
+void edgeCases(void)
+{
+    color::red("\n--- Edge Cases ---");
     
     Weapon unnamed("");
     HumanA nobody("Nobody", unnamed);
@@ -61,11 +58,12 @@ void edgeCases() {
     ghost.attack();
 }
 
-int main() {
-    std::cout << COLOR_RED + "===== WEAPON TEST SUITE =====" + COLOR_NONE << std::endl;;
+int main(void)
+{
+    color::red("===== WEAPON TEST SUITE =====");
     testHumanA();
     testHumanB();
     edgeCases();
-    std::cout << COLOR_RED + "\n===== TESTS COMPLETE =====" + COLOR_NONE << std::endl;;
-    return 0;
+    color::red("\n===== TESTS COMPLETE =====");
+    return (0);
 }

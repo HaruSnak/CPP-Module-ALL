@@ -1,5 +1,17 @@
-#ifndef Serializer_HPP
-# define Serializer_HPP
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Serializer.hpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: shmoreno <shmoreno@student.42lausanne.c    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/17 14:48:08 by shmoreno          #+#    #+#             */
+/*   Updated: 2025/04/17 14:48:06 by shmoreno         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef SERIALIZER_HPP
+# define SERIALIZER_HPP
 
 # include <iostream>
 # include <string>

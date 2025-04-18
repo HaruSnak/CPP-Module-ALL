@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: shmoreno <shmoreno@student.42lausanne.c    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/15 17:24:39 by shmoreno          #+#    #+#             */
+/*   Updated: 2025/04/15 17:24:40 by shmoreno         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/Dog.hpp"
 
 /*------------------------------- CONSTRUCTOR --------------------------------*/
@@ -12,7 +24,7 @@ Dog::Dog() : Animal()
 Dog::Dog(const Dog &copy) : Animal(copy)
 {
     std::cout << "Copy constructor called ~ Dog" << std::endl;
-	*this = copy;
+	this->type = copy.type;
 	return ;
 }
 

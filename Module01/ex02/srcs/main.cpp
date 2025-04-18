@@ -6,16 +6,11 @@
 /*   By: shmoreno <shmoreno@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 16:12:49 by shmoreno          #+#    #+#             */
-/*   Updated: 2025/04/11 22:17:55 by shmoreno         ###   ########.fr       */
+/*   Updated: 2025/04/12 16:35:29 by shmoreno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
-#include <iostream>
-
-const std::string COLOR_RED = "\033[31m";
-const std::string COLOR_GREEN = "\033[32m";
-const std::string COLOR_NONE = "\033[0m";
+#include "../includes/brain_shout.hpp"
 
 int main(void)
 {
@@ -25,11 +20,11 @@ int main(void)
 
 	str = "HI THIS IS BRAIN";
 	stringPTR = &str;
-	std::cout << COLOR_RED + "Memory address string: " + COLOR_NONE << &str << std::endl;
-	std::cout << COLOR_RED + "Memory address pointer: " + COLOR_NONE << &stringPTR << std::endl;
-	std::cout << COLOR_RED + "Memory address reference: " + COLOR_NONE << &stringREF << std::endl;
-	std::cout << COLOR_RED + "Value string: " + COLOR_NONE << str << std::endl;
-	std::cout << COLOR_RED + "Value pointer: " + COLOR_NONE << stringPTR << std::endl;
-	std::cout << COLOR_RED + "Value reference: " + COLOR_NONE << stringREF << std::endl;
+	color::red("Memory address string: ") << &str << std::endl;
+	color::red("Memory address pointer: ") << &stringPTR << std::endl;
+	color::red("Memory address reference: ") << &stringREF << std::endl;
+	color::red("Value string: ") << str << std::endl;
+	color::red("Value pointer: ") << stringPTR << std::endl;
+	color::red("Value reference: ") << stringREF << std::endl;
 	return (0);
 }

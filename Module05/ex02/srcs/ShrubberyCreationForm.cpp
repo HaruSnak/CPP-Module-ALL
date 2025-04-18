@@ -1,16 +1,28 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: shmoreno <shmoreno@student.42lausanne.c    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/17 12:13:38 by shmoreno          #+#    #+#             */
+/*   Updated: 2025/04/17 12:14:35 by shmoreno         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/ShrubberyCreationForm.hpp"
 
 /*------------------------------- CONSTRUCTOR --------------------------------*/
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm(target, 145, 137), m_target(target)
 {
-	std::cout << "\033[1;35mDefault constructor called ~ ShrubberyCreationForm " << this->m_target + "COLOR_RED + " << std::endl;
+	std::cout << "Default constructor called ~ ShrubberyCreationForm " << this->m_target << std::endl;
 	return ;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &copy) : AForm(copy), m_target(copy.m_target)
 {
-	std::cout << "\033[1;35mName constructor called ~ ShrubberyCreationForm " << copy.m_target + "COLOR_RED + " << std::endl;
+	std::cout << "Name constructor called ~ ShrubberyCreationForm " << copy.m_target << std::endl;
 	return ;
 }
 
@@ -18,7 +30,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &copy) 
 
 ShrubberyCreationForm::~ShrubberyCreationForm()
 {
-	std::cout << "\033[1;31mDestructor called ~ ShrubberyCreationForm " << this->m_target + "COLOR_RED + " << std::endl;
+	std::cout << "Destructor called ~ ShrubberyCreationForm " << this->m_target << std::endl;
 	return ;
 }
 

@@ -1,17 +1,29 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Serializer.cpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: shmoreno <shmoreno@student.42lausanne.c    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/17 15:11:27 by shmoreno          #+#    #+#             */
+/*   Updated: 2025/04/17 16:02:31 by shmoreno         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/Serializer.hpp"
 
 /*------------------------------- CONSTRUCTOR --------------------------------*/
 
 Serializer::Serializer()
 {
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << "Serializer constructor called" << std::endl;
 	return ;
 }
 
 Serializer::Serializer(const Serializer &copy)
 {
-	std::cout << "Name constructor called" << std::endl;
-	*this = copy;
+	(void)copy;
+	std::cout << "Serializer constructor copy" << std::endl;
 	return ;
 }
 
@@ -19,7 +31,7 @@ Serializer::Serializer(const Serializer &copy)
 
 Serializer::~Serializer()
 {
-	std::cout << "Destructor called" << std::endl;
+	std::cout << "Serializer destructor called" << std::endl;
 	return ;
 }
 
@@ -45,4 +57,3 @@ Data* Serializer::deserialize(uintptr_t raw)
 {
 	return reinterpret_cast<Data*>(raw);
 }
-

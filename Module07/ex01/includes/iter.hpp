@@ -1,5 +1,17 @@
-#ifndef iter_HPP
-# define iter_HPP
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   iter.hpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: shmoreno <shmoreno@student.42lausanne.c    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/18 14:12:06 by shmoreno          #+#    #+#             */
+/*   Updated: 2025/04/18 14:12:07 by shmoreno         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef ITER_HPP
+# define ITER_HPP
 
 # include <iostream>
 # include <string>

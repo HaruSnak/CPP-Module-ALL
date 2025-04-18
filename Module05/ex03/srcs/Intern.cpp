@@ -1,17 +1,29 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Intern.cpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: shmoreno <shmoreno@student.42lausanne.c    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/17 14:20:34 by shmoreno          #+#    #+#             */
+/*   Updated: 2025/04/17 14:20:59 by shmoreno         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/Intern.hpp"
 
 /*------------------------------- CONSTRUCTOR --------------------------------*/
 
 Intern::Intern()
 {
-	std::cout << "\033[1;35mDefault constructor called ~ InternCOLOR_RED + " << std::endl;
+	std::cout << "Default constructor called ~ Intern" << std::endl;
 	return ;
 }
 
 Intern::Intern(const Intern &copy)
 {
 	(void)copy;
-	std::cout << "\033[1;35mName constructor called ~ InternCOLOR_RED + " << std::endl;
+	std::cout << "Name constructor called ~ Intern" << std::endl;
 	return ;
 }
 
@@ -19,7 +31,7 @@ Intern::Intern(const Intern &copy)
 
 Intern::~Intern()
 {
-	std::cout << "\033[1;31mDestructor called ~ InternCOLOR_RED + " << std::endl;
+	std::cout << "Destructor called ~ Intern" << std::endl;
 	return ;
 }
 

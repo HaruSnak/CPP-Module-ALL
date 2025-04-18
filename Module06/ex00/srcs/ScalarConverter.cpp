@@ -1,17 +1,28 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ScalarConverter.cpp                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: shmoreno <shmoreno@student.42lausanne.c    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/17 14:45:35 by shmoreno          #+#    #+#             */
+/*   Updated: 2025/04/17 14:46:42 by shmoreno         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/ScalarConverter.hpp"
 
 /*------------------------------- CONSTRUCTOR --------------------------------*/
 
 ScalarConverter::ScalarConverter()
 {
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << "ScalarConverter constructor called" << std::endl;
 	return ;
 }
 
 ScalarConverter::ScalarConverter(const ScalarConverter &copy)
 {
-	std::cout << "Name constructor called" << std::endl;
-	*this = copy;
+	std::cout << "ScalarConverter constructor copy" << std::endl;
 	return ;
 }
 
@@ -19,7 +30,7 @@ ScalarConverter::ScalarConverter(const ScalarConverter &copy)
 
 ScalarConverter::~ScalarConverter()
 {
-	std::cout << "Destructor called" << std::endl;
+	std::cout << "ScalarConverter destructor called" << std::endl;
 	return ;
 }
 

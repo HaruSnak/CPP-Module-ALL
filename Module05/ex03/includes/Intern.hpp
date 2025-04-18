@@ -1,5 +1,17 @@
-#ifndef Intern_HPP
-# define Intern_HPP
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Intern.hpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: shmoreno <shmoreno@student.42lausanne.c    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/17 14:19:22 by shmoreno          #+#    #+#             */
+/*   Updated: 2025/04/17 14:19:34 by shmoreno         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef INTERN_HPP
+# define INTERN_HPP
 
 # include <iostream>
 # include <string>
@@ -17,8 +29,6 @@ enum	formType {
 
 class Intern
 {
-	private:
-
 	public:
 		Intern();
 		Intern(const Intern &copy);

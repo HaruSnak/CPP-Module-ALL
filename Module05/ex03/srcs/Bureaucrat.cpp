@@ -1,25 +1,37 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: shmoreno <shmoreno@student.42lausanne.c    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/17 14:20:25 by shmoreno          #+#    #+#             */
+/*   Updated: 2025/04/17 14:20:26 by shmoreno         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/Bureaucrat.hpp"
 
 /*------------------------------- CONSTRUCTOR --------------------------------*/
 
 Bureaucrat::Bureaucrat(const std::string name, int grade) : m_name(name), m_grade(grade)
 {
-	std::cout << "\033[1;35mDefault constructor called ~ Bureaucrat " << this->m_name + "COLOR_RED + " << std::endl;
+	std::cout << "Default constructor called ~ Bureaucrat " << this->m_name << std::endl;
 	if (this->m_name.empty())
 	{
 		std::cerr << "Error: Invalid constructor, please enter a correct name!" << std::endl;
 		exit(-1);
 	}
-	if (grade < 0)
-		throw Bureaucrat::GradeTooHighExceptionn;
+	if (grade < 1)
+		throw Bureaucrat::GradeTooHighException();
 	else if (grade > 150)
-		throw Bureaucrat::GradeTooLowExceptionn;
+		throw Bureaucrat::GradeTooLowException();
 	return ;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &copy): m_name(copy.m_name), m_grade(copy.m_grade)
 {
-	std::cout << "\033[1;35mName constructor called ~ Bureaucrat " << this->m_name + "COLOR_RED + " << std::endl;
+	std::cout << "Name constructor called ~ Bureaucrat " << this->m_name << std::endl;
 	return ;
 }
 
@@ -27,7 +39,7 @@ Bureaucrat::Bureaucrat(const Bureaucrat &copy): m_name(copy.m_name), m_grade(cop
 
 Bureaucrat::~Bureaucrat()
 {
-	std::cout << "\033[1;31mDestructor called ~ Bureaucrat " << this->m_name + "COLOR_RED + " << std::endl;
+	std::cout << "Destructor called ~ Bureaucrat " << this->m_name << std::endl;
 	return ;
 }
 
@@ -44,8 +56,7 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& copy)
 
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &src)
 {
-	std::cout << COLOR_RED + "" + src.getName() << "\033[35m, bureaucrat grade \033[31m" << src.getGrade() << ".\033[00m";
-	return (os);
+	std::cout << src.getName() << ", bureaucrat grade " << src.getGrade() << ".";	return (os);
 }
 
 /*------------------------------- FUNCTIONS --------------------------------*/
@@ -76,7 +87,7 @@ void	Bureaucrat::incrementGrade(void)
 {
 	if ((this->m_grade - 1) < 1)
 	{
-		throw Bureaucrat::GradeTooHighExceptionn;
+		throw Bureaucrat::GradeTooHighException();
 		return ;
 	}
 	this->m_grade--;
@@ -87,7 +98,7 @@ void	Bureaucrat::decrementGrade(void)
 {
 	if ((this->m_grade + 1) > 150)
 	{
-		throw Bureaucrat::GradeTooLowExceptionn;
+		throw Bureaucrat::GradeTooLowException();
 		exit(-1);
 	}
 	this->m_grade++;

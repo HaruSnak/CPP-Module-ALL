@@ -1,5 +1,17 @@
-#ifndef Fixed_HPP
-# define Fixed_HPP
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: shmoreno <shmoreno@student.42lausanne.c    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/12 17:39:50 by shmoreno          #+#    #+#             */
+/*   Updated: 2025/04/12 17:40:18 by shmoreno         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef FIXED_HPP
+# define FIXED_HPP
 
 # include <iostream>
 # include <string>
@@ -12,9 +24,8 @@ class Fixed
 		static const int bits = 8;
 
 	public:
-
 		Fixed();
-		Fixed(const Fixed &a);
+		Fixed(const Fixed &src);
 		Fixed(const int number_int);
 		Fixed(const float number_float);
 		~Fixed();
@@ -41,7 +52,6 @@ class Fixed
 		static const Fixed& min(const Fixed& value1, const Fixed& value2);
 		static Fixed& max(Fixed& value1, Fixed& value2);
 		static const Fixed& max(const Fixed& value1, const Fixed& value2);
-
 };
 
 std::ostream& operator<<(std::ostream& os, const Fixed& fixed);

@@ -1,13 +1,23 @@
-#ifndef Data_HPP
-# define Data_HPP
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Data.hpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: shmoreno <shmoreno@student.42lausanne.c    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/17 14:47:44 by shmoreno          #+#    #+#             */
+/*   Updated: 2025/04/17 14:47:48 by shmoreno         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef DATA_HPP
+# define DATA_HPP
 
 # include <iostream>
 # include <string>
 
 class Data
 {
-	private:
-
 	public:
 		Data();
 		Data(const Data &copy);

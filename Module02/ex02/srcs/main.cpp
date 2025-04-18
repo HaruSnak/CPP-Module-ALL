@@ -6,11 +6,28 @@
 /*   By: shmoreno <shmoreno@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 16:12:49 by shmoreno          #+#    #+#             */
-/*   Updated: 2025/03/06 18:16:59 by shmoreno         ###   ########.fr       */
+/*   Updated: 2025/04/12 17:42:23 by shmoreno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Fixed.hpp"
+
+//Main.cpp provided in the topic
+int main( void ) {
+	Fixed a;
+	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+	std::cout << a << std::endl;
+	std::cout << ++a << std::endl;
+
+	std::cout << a << std::endl;
+	
+	std::cout << a++ << std::endl;
+	std::cout << a << std::endl;
+	
+	std::cout << b << std::endl;
+	std::cout << Fixed::max( a, b ) << std::endl;
+	return 0;
+}
 
 /*int main(void)
 {
@@ -64,21 +81,6 @@
 	std::cout << "max(a, b) : " << maxRef << std::endl; // Devrait afficher 10.5 + 2ε
 	const Fixed& maxConstRef = Fixed::max(a, c);
 	std::cout << "max(a, c) : " << maxConstRef << std::endl; // Devrait afficher 10.5 + 2ε
+	return (0);
 }*/
-
-int main( void ) {
-	Fixed a;
-	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-
-	std::cout << a << std::endl;
-	
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
-	
-	std::cout << b << std::endl;
-	std::cout << Fixed::max( a, b ) << std::endl;
-	return 0;
-}
 	

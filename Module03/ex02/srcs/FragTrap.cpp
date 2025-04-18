@@ -4,7 +4,7 @@
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
-	std::cout << "Default constructor called ~ FragTrap " << this->m_Name << std::endl;
+	std::cout << "FragTrap constructor called ~ " << this->m_Name << std::endl;
 	this->m_Hit_point = 100;
 	this->m_Energy_point = 100;
 	this->m_Attack_damage = 30;
@@ -12,7 +12,7 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name)
 
 FragTrap::FragTrap(const FragTrap &copy) : ClapTrap(copy.m_Name)
 {
-	std::cout << "Name constructor called ~ FragTrap " << this->m_Name << std::endl;
+	std::cout << "FragTrap constructor copy ~ " << this->m_Name << std::endl;
 	this->m_Hit_point = copy.m_Hit_point;
 	this->m_Energy_point = copy.m_Energy_point;
 	this->m_Attack_damage = copy.m_Attack_damage;
@@ -22,7 +22,7 @@ FragTrap::FragTrap(const FragTrap &copy) : ClapTrap(copy.m_Name)
 
 FragTrap::~FragTrap()
 {
-	std::cout << "Destructor called ~ FragTrap " << this->m_Name << std::endl;
+	std::cout << "FragTrap destructor called ~ " << this->m_Name << std::endl;
 }
 
 /*------------------------------- OVERLOAD OPERATOR --------------------------------*/
@@ -43,5 +43,8 @@ FragTrap& FragTrap::operator=(FragTrap& copy)
 
 void	FragTrap::highFivesGuys(void)
 {
-	std::cout << "FragTrap " << this->m_Name << " gives a high five!" << std::endl << std::endl;
+	if (this->m_Hit_point > 0 && this->m_Energy_point > 0)
+		std::cout << "FragTrap " << this->m_Name << " gives a high five!" << std::endl << std::endl;
+	else
+		std::cout << "FragTrap " << this->m_Name << " can't high five (no HP left)" << std::endl << std::endl;
 }

@@ -1,10 +1,20 @@
-#include "../includes/Bureaucrat.hpp"
-#include "../includes/PresidentialPardonForm.hpp"
-#include "../includes/RobotomyRequestForm.hpp"
-#include "../includes/ShrubberyCreationForm.hpp"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: shmoreno <shmoreno@student.42lausanne.c    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/17 11:16:27 by shmoreno          #+#    #+#             */
+/*   Updated: 2025/04/17 14:20:59 by shmoreno         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void testSuccessfulShrubbery() {
-    std::cout << "\n\033[1;36m=== TEST ShrubberyCreationForm (SUCCESS) ===COLOR_RED + " << std::endl;
+#include "../includes/form_28B.hpp"
+
+void testSuccessfulShrubbery(void)
+{
+    color::red("\n=== TEST ShrubberyCreationForm (SUCCESS) ===");
     try
 	{
         Bureaucrat gardener("Master Gardener", 130);
@@ -12,15 +22,17 @@ void testSuccessfulShrubbery() {
 
         gardener.signForm(garden);
         gardener.executeForm(garden);
-        std::cout << "✓ Successfully created shrubbery file\n";
-    } catch (const std::exception& e)
+        color::green("✓ Successfully created shrubbery file\n");
+    }
+	catch (const std::exception& e)
 	{
-        std::cerr << "✗ Unexpected error: " << e.what() << std::endl;
+        std::cerr << color::"✗ Unexpected error: " << e.what() << color::COLOR_NONE << std::endl;
     }
 }
 
-void testSuccessfulRobotomy() {
-    std::cout << "\n\033[1;36m=== TEST RobotomyRequestForm (SUCCESS) ===COLOR_RED + " << std::endl;
+void testSuccessfulRobotomy(void)
+{
+    color::red("\n=== TEST RobotomyRequestForm (SUCCESS) ===");
     try
 	{
         Bureaucrat surgeon("Dr. Robot", 30);
@@ -28,15 +40,17 @@ void testSuccessfulRobotomy() {
         
         surgeon.signForm(patient);
         surgeon.executeForm(patient);
-        std::cout << "✓ Robotomy procedure completed\n";
-    } catch (const std::exception& e)
+        color::green("✓ Robotomy procedure completed\n");
+    }
+	catch (const std::exception& e)
 	{
-        std::cerr << "✗ Unexpected error: " << e.what() << std::endl;
+        std::cerr << color::"✗ Unexpected error: " << e.what() << color::COLOR_NONE << std::endl;
     }
 }
 
-void testSuccessfulPardon() {
-    std::cout << "\n\033[1;36m=== TEST PresidentialPardonForm (SUCCESS) ===COLOR_RED + " << std::endl;
+void testSuccessfulPardon(void)
+{
+    color::red("\n=== TEST PresidentialPardonForm (SUCCESS) ===");
     try
 	{
         Bureaucrat president("Zaphod Beeblebrox", 1);
@@ -44,17 +58,17 @@ void testSuccessfulPardon() {
         
         president.signForm(convict);
         president.executeForm(convict);
-        std::cout << "✓ Presidential pardon granted\n";
-    } catch (const std::exception& e)
+        color::green("✓ Presidential pardon granted\n");
+    }
+	catch (const std::exception& e)
 	{
-        std::cerr << "✗ Unexpected error: " << e.what() << std::endl;
+        std::cerr << color::"✗ Unexpected error: " << e.what() << color::COLOR_NONE << std::endl;
     }
 }
 
-void testEdgeCases() {
-    std::cout << "\n\033[1;36m=== EDGE CASE TESTS ===COLOR_RED + " << std::endl;
-    
-    // Test: Exact minimum grade for execution
+void testEdgeCases(void)
+{
+    color::red("\n=== EDGE CASE TESTS ===");
     try
 	{
         Bureaucrat exactGrade("Precision Worker", 137);
@@ -62,30 +76,30 @@ void testEdgeCases() {
         
         exactGrade.signForm(exactForm);
         exactGrade.executeForm(exactForm);
-        std::cout << "✓ Exact grade requirement test passed\n";
-    } catch (const std::exception& e)
+        color::green("✓ Exact grade requirement test passed\n");
+    }
+	catch (const std::exception& e)
 	{
-        std::cerr << "✗ Exact grade test failed: " << e.what() << std::endl;
+        std::cerr << color::"✗ Exact grade test failed: " << e.what() << color::COLOR_NONE << std::endl;
     }
 }
 
-void testFailureCases() {
-    std::cout << "\n\033[1;36m=== FAILURE TESTS (EXPECTED ERRORS) ===COLOR_RED + " << std::endl;
+void testFailureCases(void)
+{
+    color::red("\n=== FAILURE TESTS (EXPECTED ERRORS) ===");
     
-    // Test: Unsigned form execution
     try
 	{
         Bureaucrat clerk("Junior Clerk", 140);
         ShrubberyCreationForm form("Backyard");
         
         clerk.executeForm(form);
-        std::cerr << "✗ Unexpected success - should have failed (unsigned form)\n";
-    } catch (const std::exception& e)
-	{
-        std::cout << "✓ Properly caught unsigned form error: " << e.what() << std::endl;
+        color::red("✗ Unexpected success - should have failed (unsigned form)\n");
     }
-    
-    // Test: Grade too low for execution
+	catch (const std::exception& e)
+	{
+        std::cerr << color::COLOR_GREEN + "✓ Properly caught unsigned form error: " << e.what() << color::COLOR_NONE << std::endl;
+    }
     try
 	{
         Bureaucrat intern("Intern", 150);
@@ -93,16 +107,16 @@ void testFailureCases() {
         
         intern.signForm(pardon);
         intern.executeForm(pardon);
-        std::cerr << "✗ Unexpected success - should have failed (grade too low)\n";
-    } catch (const std::exception& e)
+        color::red("✗ Unexpected success - should have failed (grade too low)\n");
+    }
+	catch (const std::exception& e)
 	{
-        std::cout << "✓ Properly caught grade requirement error: " << e.what() << std::endl;
+        std::cerr << color::COLOR_GREEN + "✓ Properly caught grade requirement error: " << e.what() << color::COLOR_NONE << std::endl;
     }
 }
 
 int main(void)
 {
-
     try
 	{
         testSuccessfulShrubbery();
@@ -110,12 +124,12 @@ int main(void)
         testSuccessfulPardon();
         testEdgeCases();
         testFailureCases();
-    } catch (...)
+    }
+	catch (...)
 	{
-        std::cerr << "\033[1;31mUNHANDLED EXCEPTION IN MAINCOLOR_RED + " << std::endl;
+        color::err_red("UNHANDLED EXCEPTION IN MAIN");
         return (EXIT_FAILURE);
     }
-
-    std::cout << "\n\033[1;32m=== ALL TESTS COMPLETED ===COLOR_RED + " << std::endl;
+    color::red("\n\033[1;32m=== ALL TESTS COMPLETED ===");
     return (EXIT_SUCCESS);
 }

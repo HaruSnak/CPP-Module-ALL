@@ -1,27 +1,38 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: shmoreno <shmoreno@student.42lausanne.c    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/12 17:26:36 by shmoreno          #+#    #+#             */
+/*   Updated: 2025/04/13 21:06:56 by shmoreno         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/Fixed.hpp"
 
 /*------------------------------- CONSTRUCTOR --------------------------------*/
 
 Fixed::Fixed() : value(0)
 {
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << "Fixed constructor called" << std::endl;
 }
 
-Fixed::Fixed(const Fixed &a)
+Fixed::Fixed(const Fixed &src) : value(src.value)
 {
-	std::cout << "Copy constructor called" << std::endl;
-	*this = a;
+	std::cout << "Fixed constructor copy" << std::endl;
 }
 
 Fixed::Fixed(const int number_int)
 {
-	std::cout << "Int constructor called" << std::endl;
+	std::cout << "Fixed ~ Int constructor called" << std::endl;
 	this->value = number_int << bits;
 }
 
 Fixed::Fixed(const float number_float)
 {
-	std::cout << "Float constructor called" << std::endl;
+	std::cout << "Fixed ~ Float constructor called" << std::endl;
 	this->value = roundf(number_float * (1 << bits));
 }
 
@@ -29,7 +40,7 @@ Fixed::Fixed(const float number_float)
 
 Fixed::~Fixed()
 {
-	std::cout << "Destructor called" << std::endl;
+	std::cout << "Fixed destructor called" << std::endl;
 }
 
 Fixed& Fixed::operator=(const Fixed& fixed_b)

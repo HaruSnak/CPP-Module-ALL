@@ -1,16 +1,32 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Form.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: shmoreno <shmoreno@student.42lausanne.c    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/15 19:07:02 by shmoreno          #+#    #+#             */
+/*   Updated: 2025/04/17 11:01:21 by shmoreno         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/Form.hpp"
 
 /*------------------------------- CONSTRUCTOR --------------------------------*/
 
 Form::Form(std::string name, int gradeToSign, int gradeToExec): m_name(name), m_isSigned(false), m_gradeToSign(gradeToSign), m_gradeToExec(gradeToExec)
 {
-	std::cout << "Default constructor called ~ Form" << std::endl;
+	std::cout << "Form constructor called ~ " << this->m_name << std::endl;
+	if (gradeToSign < 1 || gradeToExec < 1)
+		throw Bureaucrat::GradeTooHighException();
+	else if (gradeToSign > 150 || gradeToExec > 150)
+		throw Bureaucrat::GradeTooLowException();
 	return ;
 }
 
 Form::Form(const Form &copy) : m_name(copy.m_name), m_isSigned(copy.m_isSigned), m_gradeToSign(copy.m_gradeToSign), m_gradeToExec(copy.m_gradeToExec)
 {
-	std::cout << "Name constructor called ~ Form" << std::endl;
+	std::cout << "Form constructor copy ~ " << this->m_name << std::endl;
 	return ;
 }
 
@@ -18,7 +34,7 @@ Form::Form(const Form &copy) : m_name(copy.m_name), m_isSigned(copy.m_isSigned),
 
 Form::~Form()
 {
-	std::cout << "Destructor called ~ Form" << std::endl;
+	std::cout << "Form destructor called ~ " << this->m_name << std::endl;
 	return ;
 }
 
@@ -35,7 +51,6 @@ Form& Form::operator=(Form& copy)
 
 std::ostream &operator<<(std::ostream &os, const Form &src)
 {
-	//Tax Form 42A, status: unsigned, requires grade 5 to sign, grade 10 to execute.
 	std::cout << src.getName() << ", status: " << (src.getIsSigned() ? "signed" : "unsigned")
 	<< ", requires grade " << src.getGradeToSign() << " to sign, grade " << src.getGradeToExec() << " to execute." << std::endl;
 	return (os);
@@ -45,16 +60,19 @@ std::ostream &operator<<(std::ostream &os, const Form &src)
 
 void	Form::beSigned(const Bureaucrat &bureauCrat)
 {
-	if (bureauCrat.getGrade() < this->m_gradeToSign)
+	if (this->m_isSigned)
 	{
-		//signed the form because his grade is 10 and the grade on the form is 6
+		std::cout << bureauCrat.getName() << " couldn't sign " << this->getName() << " because Form is already signed" << std::endl;
+		return ;
+	}
+	if (bureauCrat.getGrade() <= this->m_gradeToSign)
+	{
 		this->m_isSigned = true;
 		std::cout << bureauCrat.getName() << " signed the form " << this->getName() << " because his grade is " << bureauCrat.getGrade() << " and the grade on the form is " << this->m_gradeToSign << std::endl;
 	}
 	else
 	{
-		std::cout << bureauCrat.getName() << " couldn’t sign the form " << this->getName() << " because his grade is " << bureauCrat.getGrade() << " and the grade on the form is " << this->m_gradeToSign << std::endl;
-		throw GradeTooLowExceptionn;
+		throw Bureaucrat::GradeTooLowException();
 	}
 	return ;
 }

@@ -6,12 +6,13 @@
 /*   By: shmoreno <shmoreno@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 16:12:49 by shmoreno          #+#    #+#             */
-/*   Updated: 2025/02/26 15:54:44 by shmoreno         ###   ########.fr       */
+/*   Updated: 2025/04/12 17:26:16 by shmoreno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Fixed.hpp"
 
+//Main.cpp provided in the topic
 int main(void)
 {
 	Fixed a;
