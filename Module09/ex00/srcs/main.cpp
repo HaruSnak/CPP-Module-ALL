@@ -1,36 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Array.hpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shmoreno <shmoreno@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/18 14:13:38 by shmoreno          #+#    #+#             */
-/*   Updated: 2025/04/18 14:13:39 by shmoreno         ###   ########.fr       */
+/*   Created: 2025/04/17 16:30:20 by shmoreno          #+#    #+#             */
+/*   Updated: 2025/05/01 19:51:49 by shmoreno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ARRAY_HPP
-# define ARRAY_HPP
+#include "../includes/easyfind.hpp"
 
-# include <iostream>
-# include <string>
-# include <cstdlib>
-
-template<typename T>
-class Array
+int main(int argc, char *argv[])
 {
-	private:
-		T *m_array;
-		size_t m_size;
-	public:
-		Array();
-		Array(unsigned int number);
-		Array(const Array &copy);
-		~Array();
-		Array& operator=(const Array& copy);
-		T& operator[](signed int size);
-		size_t	size(void) const;
-};
-
-#endif
+	if (argc != 2)
+	{
+		std::cerr << "Error: Only one argument is valid, it must be a file containing a Database!" << std::endl;
+		return (-1);
+	}
+    return (0);
+}

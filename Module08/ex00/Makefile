@@ -1,4 +1,4 @@
-NAME = easyfind
+NAME = stack
 CXX = c++
 RM = rm -f
 INCLUDES = -I./includes

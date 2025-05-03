@@ -6,7 +6,7 @@
 /*   By: shmoreno <shmoreno@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 11:16:27 by shmoreno          #+#    #+#             */
-/*   Updated: 2025/04/17 14:20:59 by shmoreno         ###   ########.fr       */
+/*   Updated: 2025/04/29 18:39:52 by shmoreno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void testSuccessfulShrubbery(void)
     }
 	catch (const std::exception& e)
 	{
-        std::cerr << color::"✗ Unexpected error: " << e.what() << color::COLOR_NONE << std::endl;
+        std::cerr << color::COLOR_RED + "✗ Unexpected error: " << e.what() << color::COLOR_NONE << std::endl;
     }
 }
 
@@ -44,7 +44,7 @@ void testSuccessfulRobotomy(void)
     }
 	catch (const std::exception& e)
 	{
-        std::cerr << color::"✗ Unexpected error: " << e.what() << color::COLOR_NONE << std::endl;
+        std::cerr << color::COLOR_RED + "✗ Unexpected error: " << e.what() << color::COLOR_NONE << std::endl;
     }
 }
 
@@ -62,7 +62,7 @@ void testSuccessfulPardon(void)
     }
 	catch (const std::exception& e)
 	{
-        std::cerr << color::"✗ Unexpected error: " << e.what() << color::COLOR_NONE << std::endl;
+        std::cerr << color::COLOR_RED + "✗ Unexpected error: " << e.what() << color::COLOR_NONE << std::endl;
     }
 }
 
@@ -80,7 +80,7 @@ void testEdgeCases(void)
     }
 	catch (const std::exception& e)
 	{
-        std::cerr << color::"✗ Exact grade test failed: " << e.what() << color::COLOR_NONE << std::endl;
+        std::cerr << color::COLOR_RED + "✗ Exact grade test failed: " << e.what() << color::COLOR_NONE << std::endl;
     }
 }
 
