@@ -1,4 +1,4 @@
-NAME = span
+NAME = RPN
 CXX = c++
 RM = rm -f
 INCLUDES = -I./includes
@@ -6,7 +6,8 @@ CXXFLAGS = -std=c++98 -Wall -Wextra -Werror
 OBJ_DIR = obj/
 
 SRC_1 = srcs/main.cpp \
-		srcs/Span.cpp
+		srcs/RPN.cpp \
+		srcs/errors/errors.cpp
 
 OBJ_1 = $(patsubst %.cpp,$(OBJ_DIR)%.o,$(SRC_1))
 

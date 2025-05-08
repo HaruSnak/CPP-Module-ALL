@@ -1,32 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   errors.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shmoreno <shmoreno@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/18 14:12:41 by shmoreno          #+#    #+#             */
-/*   Updated: 2025/05/06 20:57:25 by shmoreno         ###   ########.fr       */
+/*   Created: 2025/05/04 15:45:57 by shmoreno          #+#    #+#             */
+/*   Updated: 2025/05/05 22:14:59 by shmoreno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/RPN.hpp"
+#include "../../includes/exchange.hpp"
 
-int main(int argc, char *argv[])
+void	errorType(std::string errorMsg)
 {
-	if (argc != 2)
-	{
-		std::cerr << "Error: Only one argument is valid, it must be a file containing a Database!" << std::endl;
-		return (-1);
-	}
-	RPN rpn;
-	try
-	{
-		std::cout << rpn.ResultRPN(argv[1]) << std::endl;
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-    return (0);
+	color::err_red("Error: " + errorMsg);
+	exit(-1);
 }

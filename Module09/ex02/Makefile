@@ -1,4 +1,4 @@
-NAME = array
+NAME = PmergeMe
 CXX = c++
 RM = rm -f
 INCLUDES = -I./includes

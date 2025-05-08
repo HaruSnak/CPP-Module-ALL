@@ -6,6 +6,8 @@ CXXFLAGS = -std=c++98 -Wall -Wextra -Werror
 OBJ_DIR = obj/
 
 SRC_1 = srcs/main.cpp \
+		srcs/BitcoinExchange.cpp \
+		srcs/errors/errors.cpp
 
 OBJ_1 = $(patsubst %.cpp,$(OBJ_DIR)%.o,$(SRC_1))
 

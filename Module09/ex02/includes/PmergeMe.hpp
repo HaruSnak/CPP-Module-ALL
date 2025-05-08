@@ -1,38 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Span.hpp                                           :+:      :+:    :+:   */
+/*   PmergeMe.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shmoreno <shmoreno@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/24 15:32:36 by shmoreno          #+#    #+#             */
-/*   Updated: 2025/04/28 16:55:20 by shmoreno         ###   ########.fr       */
+/*   Created: 2025/05/06 22:06:30 by shmoreno          #+#    #+#             */
+/*   Updated: 2025/05/07 22:37:05 by shmoreno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SPAN_HPP
-# define SPAN_HPP
+#ifndef PMERGEME_HPP
+# define PMERGEME_HPP
 
 # include <iostream>
 # include <string>
+# include <sstream>
 # include <vector>
-# include <limits>
 # include <algorithm>
+# include "utils.hpp"
 
-class Span
+class PmergeMe
 {
 	private:
-		unsigned int N;
-		std::vector<int> vec;
+	std::vector<int> tmp;
+	std::vector<int> result;
 	public:
-		Span(unsigned int maxNbr);
-		Span(const Span &copy);
-		~Span();
-		Span& operator=(const Span& copy);
-		void	addNumber(unsigned int number);
-		int		shortestSpan(void);
-		int		longestSpan(void);
-		void	addNumbers(std::vector<int>::iterator begin, std::vector<int>::iterator end);
+		PmergeMe(char *argv);
+		PmergeMe(const PmergeMe &copy);
+		~PmergeMe();
+		PmergeMe& operator=(const PmergeMe& copy);
+		void	FordJohnsonSort(void);
 };
 
 #endif

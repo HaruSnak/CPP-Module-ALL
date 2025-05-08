@@ -1,36 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   MutantStack.hpp                                    :+:      :+:    :+:   */
+/*   RPN.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shmoreno <shmoreno@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/28 18:27:40 by shmoreno          #+#    #+#             */
-/*   Updated: 2025/04/29 18:32:11 by shmoreno         ###   ########.fr       */
+/*   Created: 2025/05/05 16:24:34 by shmoreno          #+#    #+#             */
+/*   Updated: 2025/05/05 22:03:29 by shmoreno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MUTANTSTACK_HPP
-# define MUTANTSTACK_HPP
+#ifndef RPN_HPP
+# define RPN_HPP
 
 # include <iostream>
 # include <string>
 # include <stack>
-# include <list>
+# include <sstream>
+# include <cstdlib>
+# include "polishNotation.hpp"
 
-template<typename T>
-class MutantStack : public std::stack<T>
+class RPN
 {
+	private:
+		std::stack<int> stack;
 	public:
-		typedef typename std::stack<int>::container_type Container;
-		typedef typename Container::iterator iterator;
-		typedef typename Container::const_iterator c_iterator;
-		iterator  begin(void);
-		iterator end(void);
-		c_iterator begin(void) const;
-		c_iterator end(void) const;
-		
-		
+		RPN();
+		RPN(const RPN &copy);
+		~RPN();
+		RPN& operator=(const RPN& copy);
+		int ResultRPN(char *argv);
 };
 
 #endif
