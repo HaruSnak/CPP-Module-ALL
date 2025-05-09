@@ -6,7 +6,7 @@
 /*   By: shmoreno <shmoreno@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 14:15:01 by shmoreno          #+#    #+#             */
-/*   Updated: 2025/05/07 17:52:23 by shmoreno         ###   ########.fr       */
+/*   Updated: 2025/05/09 21:00:37 by shmoreno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,12 @@
 
 int main(int argc, char *argv[])
 {
-	if (argc != 2)
+	if (argc == 1)
 	{
-		std::cerr << "Error: Only one argument is valid, it must be a file containing a Database!" << std::endl;
+		std::cerr << "Error: Only numbers as arguments!" << std::endl;
 		return (-1);
 	}
-	PmergeMe johnson;
-	try
-	{
-		std::cout << rpn.ResultRPN(argv[1]) << std::endl;
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
+	PmergeMe johnson(argv);
+	johnson.printSort();
     return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: shmoreno <shmoreno@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 14:12:41 by shmoreno          #+#    #+#             */
-/*   Updated: 2025/05/06 20:57:25 by shmoreno         ###   ########.fr       */
+/*   Updated: 2025/05/09 21:05:52 by shmoreno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
 {
 	if (argc != 2)
 	{
-		std::cerr << "Error: Only one argument is valid, it must be a file containing a Database!" << std::endl;
+		std::cerr << "Error: Only one argument with positive number, +, *, /, -" << std::endl;
 		return (-1);
 	}
 	RPN rpn;
