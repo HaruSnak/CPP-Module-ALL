@@ -12,10 +12,8 @@ Here I am at a key stage of course 42: the very first language change, with the 
 ## 📒 Index
 
 - [About](#about)
-- [Approach](#approach)
 - [Installation](#installation)
 - [Development](#development)
-  - [Pre-Requisites](#pre-requisites)
   - [File Structure](#file-structure)
  <!-- - [Diagram Architecture](#diagram-architecture)  -->
 - [Notes](#notes)
@@ -32,7 +30,7 @@ The **C++ Modules project (CPP00 to CPP09)** aims to familiarize you with the fu
 
 * Using **stdio streams** (_*cout*_, _*cin*_)<br>
 
-* Concepts of **constructors**, **initializer lists**, and _*static*_ and _*const keywords*_<br>
+* Concepts of **constructors**, **initializer lists**, and __*static*__ and _*const keywords*_<br>
 
 🔹 **CPP Module 01:**
 * Dynamic **memory management**
@@ -98,11 +96,6 @@ $ make clean
 ```
 
 ## Development
-### Pre-Requisites
-```
-//
-```
-
 ### File Structure
 
 ```
