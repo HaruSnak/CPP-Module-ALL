@@ -1,7 +1,7 @@
 <img src="readme/CPP-Modules.png" alt="CPP-Modules" width="900"/>
 
 # CPP-Module-ALL
-Here I am at a key stage of course 42: the very first language change, with the transition to C++. This module marks the beginning of a learning process focused on the fundamental concepts of C++ in its C++98 standard: classes, inheritance, polymorphism, STL containers, and many other concepts specific to object-oriented programming.
+Here I am at a key stage of course **42**: the very first language change, with the transition to C++. This module marks the beginning of a learning process focused on the fundamental concepts of **C++** in its **C++98** standard: *classes, inheritance, polymorphism, STL containers, and many other concepts specific to object-oriented programming.*
 
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
@@ -30,7 +30,7 @@ The **C++ Modules project (CPP00 to CPP09)** aims to familiarize you with the fu
 
 * Using **stdio streams** (_*cout*_, _*cin*_)<br>
 
-* Concepts of **constructors**, **initializer lists**, and __*static*__ and _*const keywords*_<br>
+* Concepts of **constructors**, **initializer lists**, and `static` and `const keywords`<br>
 
 🔹 **CPP Module 01:**
 * Dynamic **memory management**
@@ -57,10 +57,10 @@ The **C++ Modules project (CPP00 to CPP09)** aims to familiarize you with the fu
 🔹 **CPP Module 5:**
 * Review of previous concepts
 
-* Introduction to **exceptions** (_*try*_, _*catch*_, _*throw*_)
+* Introduction to **exceptions** (`try`, `catch`, `throw`)
 
 🔹 **CPP Module 6:**
-* Exploration of different **C++ casts**: _*static_cast*_, _*dynamic_cast*_, _*const_cast*_, _*reinterpret_cast*_
+* Exploration of different **C++ casts**: `static_cast`, `dynamic_cast`, `const_cast`, `reinterpret_cast`
 
 🔹 **CPP Module 7:**
 * Introduction to **templates**
@@ -75,7 +75,7 @@ The **C++ Modules project (CPP00 to CPP09)** aims to familiarize you with the fu
 🔹 **CPP Module 9:**
 * Advanced understanding of the **STL** (Standard Template Library)
 
-* Advanced manipulation of _*vector*_, _*list*_, _*map*_, _*stack*_, _*queue*_, and associated algorithms
+* Advanced manipulation of `vector`, `list`, `map`, `stack`, `queue`, and associated algorithms
 
 ## Installation
 ```bash
