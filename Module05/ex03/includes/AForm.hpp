@@ -6,12 +6,12 @@
 /*   By: shmoreno <shmoreno@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 11:02:47 by shmoreno          #+#    #+#             */
-/*   Updated: 2025/04/17 11:02:48 by shmoreno         ###   ########.fr       */
+/*   Updated: 2025/06/09 20:36:14 by shmoreno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FORM_HPP
-# define FORM_HPP
+#ifndef AFORM_HPP
+# define AFORM_HPP
 
 # include <iostream>
 # include <string>

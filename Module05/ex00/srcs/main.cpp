@@ -6,7 +6,7 @@
 /*   By: shmoreno <shmoreno@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 18:49:55 by shmoreno          #+#    #+#             */
-/*   Updated: 2025/04/17 14:20:59 by shmoreno         ###   ########.fr       */
+/*   Updated: 2025/06/09 20:36:09 by shmoreno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void testBasicCreation(void)
         std::cout << color::COLOR_GREEN << lowest << color::COLOR_NONE  << std::endl;
     }
 	catch (const std::exception& e) {
-        std::cerr << color::"Error: " << e.what() << color::COLOR_NONE << std::endl;
+        std::cerr << color::COLOR_RED + "Error: " << e.what() << color::COLOR_NONE << std::endl;
     }
 }
 
@@ -37,7 +37,7 @@ void testInvalidGrades(void)
         Bureaucrat tooHigh("Error", 0);
     }
 	catch (const Bureaucrat::GradeTooHighException& e) {
-        std::cerr << color::"Caught GradeTooHigh: " << e.what() << color::COLOR_NONE << std::endl;
+        std::cerr << color::COLOR_RED + "Caught GradeTooHigh: " << e.what() << color::COLOR_NONE << std::endl;
     }
 
     try {
@@ -67,7 +67,7 @@ void testGradeModification(void)
 
     }
 	catch (const std::exception& e) {
-        std::cerr << color::"Error: " << e.what() << color::COLOR_NONE << std::endl;
+        std::cerr << color::COLOR_RED + "Error: " << e.what() << color::COLOR_NONE << std::endl;
     }
 }
 
@@ -98,7 +98,7 @@ int main(void)
             b.decrementGrade();
     }
 	catch (const std::exception& e) {
-        std::cerr << color::"\nCaught in generic catch: " << e.what() << color::COLOR_NONE << std::endl;
+        std::cerr << color::COLOR_RED + "\nCaught in generic catch: " << e.what() << color::COLOR_NONE << std::endl;
     }
     return (0);
 }
