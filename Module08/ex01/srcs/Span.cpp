@@ -60,7 +60,6 @@ int	Span::shortestSpan(void)
 	std::vector<int> tmp = this->vec;
 	std::sort(tmp.begin(), tmp.end());
 	int value = abs(tmp[0] - tmp[1]);
-	//std::cout << value << std::endl;
 	for (int i = 0; static_cast<long unsigned int>(i) != tmp.size(); i++)
 	{
 		if (static_cast<long unsigned int>(i) + 1 < tmp.size() && abs(tmp[i] - tmp[i + 1]) < value)
