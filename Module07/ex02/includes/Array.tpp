@@ -84,5 +84,3 @@ size_t Array<T>::size(void) const
 {
 	return (this->m_size);
 }
-
-

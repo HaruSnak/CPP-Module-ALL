@@ -106,7 +106,6 @@ void ScalarConverter::displayConversions(float f, double d)
         std::cout << "double: nan" << std::endl;
         return;
     }
-    
     if (std::isinf(d))
     {
         std::cout << "char: impossible" << std::endl;
@@ -115,7 +114,6 @@ void ScalarConverter::displayConversions(float f, double d)
         std::cout << "double: " << (d < 0 ? "-inf" : "+inf") << std::endl;
         return;
     }
-    
     // Conversion char
     int intValue = static_cast<int>(d);
     if (intValue < 0 || intValue > 255)
@@ -130,10 +128,8 @@ void ScalarConverter::displayConversions(float f, double d)
         std::cout << "int: impossible" << std::endl;
     else
         std::cout << "int: " << static_cast<int>(d) << std::endl;
-    
     // Conversion float
     std::cout << "float: " << std::fixed << std::setprecision(1) << f << "f" << std::endl;
-    
     // Conversion double
     std::cout << "double: " << std::fixed << std::setprecision(1) << d << std::endl;
 }

@@ -41,6 +41,7 @@ void identify(Base *p)
 		color::err_red("[identify(Base*)]\033[0m: Pointer is NULL");
 }
 
+// dynamic_cast reference failed = std::bad_cast exception else nullptr
 void identify(Base &p)
 {
 	try {
