@@ -24,7 +24,7 @@ BitcoinExchange::BitcoinExchange() : M_DB_PATH("data.csv")
 BitcoinExchange::BitcoinExchange(const BitcoinExchange &copy)
 {
 	std::cout << "BitcoinExchange constructor copy" << std::endl;
-	*this = copy;
+	this->m_DB = copy.m_DB;
 	return ;
 }
 
@@ -42,7 +42,7 @@ BitcoinExchange& BitcoinExchange::operator=(const BitcoinExchange& copy)
 {
 	if (this != &copy)
 	{
-		*this = copy;
+		this->m_DB = copy.m_DB;
 	}
 	return (*this);
 }
@@ -92,73 +92,69 @@ void	BitcoinExchange::searchInDB(char *argv)
 		std::string key_value = buff.substr(occurence + 1);
 		key.erase(key.find_last_not_of(" \t") + 1);
 		key_value.erase(0, key_value.find_first_not_of(" \t"));
-		if (this->findErrors(key, key_value) != 0) continue ;
+		if (!this->findErrors(key, key_value)) continue ;
+		float value = std::strtof(key_value.c_str(), NULL);
 		std::map<std::string, float>::iterator it = this->m_DB.lower_bound(key);
-		if (it != this->m_DB.end() && it->first == key)
-		{
-			if (it->first == key)
-				std::cout << key << " => " << key_value << " = " << (std::strtof(key_value.c_str(), NULL) * it->second) << std::endl;
-			else
-			{
-				it--;
-				std::cout << key << " => " << key_value << " = " << (std::strtof(key_value.c_str(), NULL) * it->second) << std::endl;
-			}
-		}
-		else
-		{
-			it--;
-			std::cout << key << " => " << key_value << " = " << (std::strtof(key_value.c_str(), NULL) * it->second) << std::endl;
-		}
+        if (it != this->m_DB.end() && it->first == key)
+        {
+            std::cout << key << " => " << key_value << " = " << (value * it->second) << std::endl;
+        }
+        else if (it != this->m_DB.begin())
+        {
+            --it;
+            std::cout << key << " => " << key_value << " = " << (value * it->second) << std::endl;
+        }
+        else
+            std::cout << "Error: no earlier date available." << std::endl;
 	}
 	file.close();
 	return ;
 }
 
-int BitcoinExchange::findErrors(const std::string& key, const std::string& value)
+bool	BitcoinExchange::isValidDate(const std::string& date)
+{
+	if (date.size() != 10 || date[4] != '-' || date[7] != '-')
+		return (false); 
+	for (size_t i = 0; i < date.size(); ++i)
+	{
+		if ((i == 4 || i == 7) && date[i] != '-') return (false);
+		else if (i != 4 && i != 7 && !std::isdigit(date[i])) return (false);
+	}
+    
+    int year = std::atoi(date.substr(0, 4).c_str());
+    int month = std::atoi(date.substr(5, 2).c_str());
+    int day = std::atoi(date.substr(8, 2).c_str());
+    
+    if (year < 1000 || year > 9999) return (false);
+    if (month < 1 || month > 12) return (false);
+    if (day < 1 || day > 31) return (false);
+    return (true);
+}
+
+bool	BitcoinExchange::findErrors(const std::string& key, const std::string& value)
 {
 	char* endptr;
 	float val_brut = std::strtof(value.c_str(), &endptr);
 
-	if (*endptr != '\0')
+	if (!this->isValidDate(key))
 	{
-		color::err_red("Invalid value for float.");
-		return (-1);
+        color::err_red("Error: bad input => " + key);
+		return (false);
 	}
-	else if (key.size() != 10 || key[4] != '-' || key[7] != '-')
+	else if (*endptr != '\0')
 	{
-		color::err_red("Invalid date (YYYY-MM-DD)");
-		return (-1);
+        color::err_red("Error: bad input => " + key);
+		return (false);
 	}
 	else if (val_brut < 0.0f)
 	{
-		color::err_red("Not a positive number.");
-		return (-1);
+        color::err_red("Error: not a positive number.");
+		return (false);
 	}
-	else if (isFloat(val_brut) && (val_brut < 0 || val_brut > 1000))
+	else if (val_brut > 1000.0f)
 	{
-		color::err_red("Error: Float value exceeding maximum or minimum limits.");
-		return (-1);
+        color::err_red("Error: too large a number.");
+		return (false);
 	}
-	else if (!isFloat(val_brut) && (val_brut < 0 || val_brut > 1000))
-	{
-		color::err_red("Value exceeding maximum or minimum limits. 0 <=> 1000");
-		return (-1);
-	}
-	else
-	{
-		for (size_t i = 0; i < key.size(); ++i)
-		{
-			if ((i == 4 || i == 7) && key[i] != '-')
-			{
-				color::err_red("Invalid date (YYYY-MM-DD)");
-				return (-1);
-			}
-			else if (i != 4 && i != 7 && !std::isdigit(key[i]))
-			{
-				color::err_red("Invalid date (YYYY-MM-DD)");
-				return (-1);
-			}
-		}
-	}
-	return (0);
+	return (true);
 }

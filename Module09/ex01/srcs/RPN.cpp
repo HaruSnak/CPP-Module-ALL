@@ -11,7 +11,7 @@ RPN::RPN()
 RPN::RPN(const RPN &copy)
 {
 	std::cout << "RPN constructor copy" << std::endl;
-	*this = copy;
+	this->stack = copy.stack;
 	return ;
 }
 
@@ -29,7 +29,7 @@ RPN& RPN::operator=(const RPN& copy)
 {
 	if (this != &copy)
 	{
-		*this = copy;
+		this->stack = copy.stack;
 	}
 	return (*this);
 }
@@ -57,6 +57,8 @@ int RPN::ResultRPN(char *argv)
 		else
 			errorType("Invalid input => " + token);
 	}
+	if (stack.size() != 1)
+		throw std::runtime_error("Error: Invalid expression!");
 	return (stack.top());
 }
 

@@ -15,5 +15,5 @@
 void	errorType(std::string errorMsg)
 {
 	color::err_red("Error: " + errorMsg);
-	exit(-1);
+	std::exit(-1);
 }

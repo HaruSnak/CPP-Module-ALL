@@ -35,7 +35,8 @@ class BitcoinExchange
 		BitcoinExchange& operator=(const BitcoinExchange& copy);
 		void	createDB(void);
 		void	searchInDB(char *argv);
-		int		findErrors(const std::string& key, const std::string& value);
+		bool 	isValidDate(const std::string& date);
+		bool	findErrors(const std::string& key, const std::string& value);
 };
 
 #endif
